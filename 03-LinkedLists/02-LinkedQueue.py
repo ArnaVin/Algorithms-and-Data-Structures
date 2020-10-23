@@ -51,6 +51,13 @@ class LinkedQueue:
         self._tail = newest
         self._size += 1
 
+    def display(self):
+    # display all elements of the queue
+        temp = self._head
+        while temp != self._tail:
+            print(temp._element, end=" ")
+            temp = temp._nxt
+        print(self._tail._element)
 if __name__ == "__main__":
 
     test = LinkedQueue()
