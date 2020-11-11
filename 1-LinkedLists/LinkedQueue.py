@@ -53,38 +53,32 @@ class LinkedQueue:
 
     def display(self):
     # display all elements of the queue
-        temp = self._head
-        while temp != self._tail:
-            print(temp._element, end=" ")
-            temp = temp._nxt
-        print(self._tail._element)
+        if self.is_empty():
+            print('Queue is empty')
+        else:
+            print('Front --- ', end="")
+            temp = self._head
+            while temp != None:
+                print(temp._element, end=" ")
+                temp = temp._nxt
+            print('--- Tail')
+            
 if __name__ == "__main__":
 
     test = LinkedQueue()
-    print('Is queue empty: ', test.is_empty())
-    print('Length of queue: ', len(test))
 
     test.enqueue(10)
     test.enqueue(15)
     test.enqueue(23)
+    test.display()
 
-    print('\nIs queue empty: ', test.is_empty())
-    print('Length of queue: ', len(test))
-    print('firstmost element in the queue: ', test.first())
-    print('Removed element: ', test.dequeue())
-
-    print('\nIs queue empty: ', test.is_empty())
-    print('Length of queue: ', len(test))
-    print('firstmost element in the queue: ', test.first())
-    print('Removed element: ', test.dequeue())
-
-    print('\nIs queue empty: ', test.is_empty())
-    print('Length of queue: ', len(test))
-    print('firstmost element in the queue: ', test.first())
-    print('Removed element: ', test.dequeue())
-
-    print('\nIs queue empty: ', test.is_empty())
-    print('Length of queue: ', len(test))
+    print(f'Dequeue : {test.dequeue()}')
+    test.display()
+    print(f'Dequeue : {test.dequeue()}')
+    test.display()
+    print(f'Dequeue : {test.dequeue()}')
+    test.display()
+    
 
 '''
 OPERATION    | RUNNING TIME

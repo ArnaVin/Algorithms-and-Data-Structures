@@ -43,33 +43,34 @@ class LinkedStack:
         self._size -= 1
         return answer
 
+    def display(self):
+    # return all elements of the stack
+        if self.is_empty():
+            print('Stack is empty')
+        else:
+            temp = self._head
+            print("TOP - ", end="")
+            while temp != None:
+                print(temp._element, end=" ")
+                temp = temp._nxt
+            print()
+
 if __name__ == "__main__":
 
     test = LinkedStack()
-    print('Is stack empty: ', test.is_empty())
-    print('Length of stack: ', len(test))
 
     test.push(10)
     test.push(15)
     test.push(23)
-
-    print('\nIs stack empty: ', test.is_empty())
-    print('Length of stack: ', len(test))
-    print('Topmost element in the stack: ', test.top())
-    print('Removed element: ', test.pop())
-
-    print('\nIs stack empty: ', test.is_empty())
-    print('Length of stack: ', len(test))
-    print('Topmost element in the stack: ', test.top())
-    print('Removed element: ', test.pop())
-
-    print('\nIs stack empty: ', test.is_empty())
-    print('Length of stack: ', len(test))
-    print('Topmost element in the stack: ', test.top())
-    print('Removed element: ', test.pop())
-
-    print('\nIs stack empty: ', test.is_empty())
-    print('Length of stack: ', len(test))
+    test.display()
+    
+    print(f'Pop : {test.pop()}')
+    test.display()
+    print(f'Pop : {test.pop()}')
+    test.display()
+    print(f'Pop : {test.pop()}')
+    test.display()
+    
 
 '''
 OPERATION   | RUNNING TIME
